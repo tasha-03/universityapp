@@ -1,0 +1,77 @@
+body {
+  font-family: Verdana;
+  margin: 0;
+}
+header {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 2em);
+  padding: 0 1em;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+header > a {
+  display: inline-flex;
+  gap: 1em;
+}
+header > a > img {
+  height: 5em;
+}
+header > h1 {
+  color: navy;
+}
+nav > ul {
+  display: inline-flex;
+  gap: 1em;
+}
+nav > ul,
+footer > ul {
+  margin: 0;
+  padding: 1em 2em;
+}
+nav > ul > li,
+footer > ul > li {
+  list-style: none;
+}
+nav,
+footer {
+  background-color: rgb(83, 105, 179);
+  color: white;
+}
+main {
+    min-height: calc(100vh - 18em);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 0;
+    gap: 1em;
+}
+main > p {
+    width: 60%;
+}
+form {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.card {
+    width: 60%;
+    border: solid 1px rgb(200, 200, 200);
+    border-radius: 5px;
+    padding: 1em;
+}
+.card > a {
+    text-decoration: underline;
+}
+.card > p {
+    display: block;
+    margin: 1em 0;
+    width: calc(100%);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

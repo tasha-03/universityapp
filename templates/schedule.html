@@ -1,0 +1,3 @@
+{% extends "index.html" %} {% block main %} {% for one in schedules %}
+<a href="{% url 'single_schedule' id=one.id %}">{{one.cathedra}}</a>
+{% endfor %} {% endblock %}

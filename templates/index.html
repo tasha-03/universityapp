@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <header>
+      <a href="{% url 'news' %}"
+        ><img src="{% static 'images/logo.png' %}" alt="logo"/><h1>Хогвартс</h1></a
+      >
+      <a href="{% url 'profile' %}">Профиль</a>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="{% url 'news' %}">Новости</a>
+        </li>
+        <li>
+          <a href="{% url 'admission-committee' %}">Приемная комиссия</a>
+        </li>
+        <li>
+          <a href="{% url 'schedule' %}">Расписание</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+        {% block main %}{% endblock main %}
+    </main>
+    <footer>
+      <ul>
+        <li>
+          <a href="{% url 'news' %}">Новости</a>
+        </li>
+        <li>
+          <a href="{% url 'admission-committee' %}">Приемная комиссия</a>
+        </li>
+        <li>
+          <a href="{% url 'schedule' %}">Расписание</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
