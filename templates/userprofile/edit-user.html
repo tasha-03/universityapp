@@ -1,0 +1,25 @@
+{% extends "index.html" %} {% block main %}
+<h2>Редактировать профиль</h2>
+<form method="POST">
+  {% csrf_token %}
+  <p>
+    <label>Полное имя</label><br />
+    <input type="text" name="full_name" value="{{user.full_name}}" />
+  </p>
+  <p>
+    <label>Курс</label><br />
+    <select name="course">
+      {% for course in courses %} {% if user.course == course.id %}
+      <option selected value="{{ course.id }}">{{ course.code }}</option>
+      {% else %}
+      <option value="{{ course.id }}">{{ course.code }}</option>
+      {% endif %} {% endfor %}
+    </select>
+  </p>
+  <p>
+    <label>Пароль</label><br />
+    <input type="password" name="password" value="{{user.password}}" />
+  </p>
+  <input type="submit" value="Сохранить" />
+</form>
+{% endblock %}

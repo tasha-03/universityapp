@@ -1,0 +1,12 @@
+{% extends "index.html" %} {% block main %}
+
+<a href="{% url 'create_news' %}">Создать новость</a>
+{% for one in news %}
+<div class="card">
+  <h3><a href="{% url 'single_news' id=one.id %}">{{one.title}}</a></h3>
+  <p>{{one.text}}</p>
+  <a href="{% url 'single_news' id=one.id %}">Читать дальше...</a>
+  <a href="/news/edit/{{one.id}}"><button>Изменить</button></a>
+  <a href="/news/delete/{{one.id}}"><button>Удалить</button></a>
+</div>
+{% endfor %} {% endblock %}

@@ -1,0 +1,23 @@
+{% extends "index.html" %} {% block main %}
+<a href="{% url 'create-course' %}"><button>Создать курс</button></a>
+<table>
+  <tr>
+    <td>ID</td>
+    <td>Code</td>
+    <td>Cathedra</td>
+  </tr>
+  {% for course in courses %}
+  <tr>
+    <td>{{ course.id }}</td>
+    <td>{{ course.code }}</td>
+    <td>{{ course.cathedra }}</td>
+    <td>
+      <a href="../edit-course/{{course.id}}/"><button>Изменить</button></a>
+    </td>
+    <td>
+      <a href="../delete-course/{{course.id}}/"><button>Удалить</button></a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

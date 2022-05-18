@@ -1,0 +1,23 @@
+{% extends "index.html" %} {% block main %}
+<h2>Пользователи</h2>
+<table>
+  <tr>
+    <td>ID</td>
+    <td>Полное имя</td>
+    <td>Выбранный курс</td>
+  </tr>
+  {% for user in users %}
+  <tr>
+    <td>{{ user.id }}</td>
+    <td>{{ user.full_name }}</td>
+    <td>{{ user.course.code }}</td>
+    <td>
+      <a href="edit/{{user.id}}/"><button>Изменить</button></a>
+    </td>
+    <td>
+      <a href="delete/{{user.id}}/"><button>Удалить</button></a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "index.html" %} {% block main %}
+<h2>Создать курс</h2>
+<form method="POST">
+  {% csrf_token %}
+  <p>
+    <label>Код курса</label><br />
+    <input type="text" name="code" value="{{course.code}}" />
+  </p>
+  <p>
+    <label>Выберите кафедру</label><br />
+    <select name="cathedra">
+      {% if course.cathedra == '1' %}
+      <option selected value="1">Gryffindor</option>
+      {% else %}
+      <option value="1">Gryffindor</option>
+      {% endif %} {% if course.cathedra == '2' %}
+      <option selected value="2">Hufflepuff</option>
+      {% else %}
+      <option value="2">Hufflepuff</option>
+      {% endif %} {% if course.cathedra == '3' %}
+      <option selected value="3">Ravenclaw</option>
+      {% else %}
+      <option value="3">Ravenclaw</option>
+      {% endif %} {% if course.cathedra == '4' %}
+      <option selected value="4">Slytherin</option>
+      {% else %}
+      <option value="4">Slytherin</option>
+      {% endif %}
+    </select>
+  </p>
+  <input type="submit" value="Сохранить" />
+</form>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "index.html" %} {% block main %}
+<h2>Редактировать новость</h2>
+<form method="POST">
+  {% csrf_token %}
+  <p>
+    <label>Название</label><br />
+    <input type="text" name="title" value="{{news.title}}" />
+  </p>
+  <p>
+    <label>Дата публикации</label><br />
+    <input type="text" name="date" value="{{news.date}}" />
+  </p>
+  <p>
+    <label>Текст</label>
+    <textarea name="text">{{news.text}}</textarea>
+  </p>
+  <p>
+    <label>Рейтинг</label><br />
+    <input type="number" name="rating" value="{{news.rating}}" />
+  </p>
+  <input type="submit" value="Сохранить" />
+</form>
+{% endblock %}

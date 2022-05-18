@@ -1,0 +1,10 @@
+{% extends "index.html" %} {% block main %}
+    <h2>Создать курс</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <input type="submit">
+    </form>
+{% endblock %}

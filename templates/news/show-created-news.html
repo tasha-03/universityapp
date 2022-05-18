@@ -1,0 +1,7 @@
+{% extends "index.html" %} {% block main %}
+<h2>Новость создана</h2>
+<p>Заголовок: {{ req.title }}</p>
+<p>Текст: {{ req.text }}</p>
+<p>Дата: {{ req.date }}</p>
+<p>Рейтинг: {{ req.rating }}</p>
+{% endblock %}

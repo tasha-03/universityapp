@@ -1,7 +1,0 @@
-{% extends "index.html" %} {% block main %} {% for one in news %}
-<div class="card">
-  <h3><a href="{% url 'single_news' id=one.id %}">{{one.title}}</a></h3>
-  <p>{{one.text}}</p>
-  <a href="{% url 'single_news' id=one.id %}">Читать дальше...</a>
-</div>
-{% endfor %} {% endblock %}

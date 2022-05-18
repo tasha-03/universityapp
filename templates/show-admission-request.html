@@ -1,0 +1,6 @@
+{% extends "index.html" %} {% block main %}
+    <h2>Подать заявку на прием</h2>
+    <p>Имя абитуриента: {{ req.user.full_name }}</p>
+    <p>Адрес: {{ req.address }}</p>
+    <p>Дата рождения: {{ req.address }}</p>
+{% endblock %}

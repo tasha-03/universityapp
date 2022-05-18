@@ -5,13 +5,47 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <title>{{ title }}</title>
+    <style>
+      form{
+        background-color: rgb(245, 245, 245);
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px rgb(200, 200, 200);
+        min-width: fit-content;
+      }
+      input, select, textarea{
+        background-color: white;
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 5px;
+        height: 2em;
+        width: 100%;
+      }
+      textarea {
+        min-height: 5em;
+        min-width: max-content;
+        max-width: max-content;
+      }
+      select > option{
+        background-color: white;
+      }
+      label{
+        float: left;
+      }
+      .field {
+        font-style: italic;
+      }
+      .error {
+        color: darkred;
+      }
+    </style>
   </head>
   <body>
     <header>
       <a href="{% url 'news' %}"
-        ><img src="{% static 'images/logo.png' %}" alt="logo"/><h1>Хогвартс</h1></a
+        ><img src="{% static 'images/logo.png' %}" alt="logo" />
+        <h1>Хогвартс</h1></a
       >
-      <a href="{% url 'profile' %}">Профиль</a>
+      <a href="{% url 'profile' %}">Зарегистрироваться</a>
     </header>
     <nav>
       <ul>
@@ -24,11 +58,12 @@
         <li>
           <a href="{% url 'schedule' %}">Расписание</a>
         </li>
+        <li>
+          <a href="{% url 'all-users' %}">Все пользователи</a>
+        </li>
       </ul>
     </nav>
-    <main>
-        {% block main %}{% endblock main %}
-    </main>
+    <main>{% block main %}{% endblock main %}</main>
     <footer>
       <ul>
         <li>
@@ -39,6 +74,9 @@
         </li>
         <li>
           <a href="{% url 'schedule' %}">Расписание</a>
+        </li>
+        <li>
+          <a href="{% url 'all-users' %}">Все пользователи</a>
         </li>
       </ul>
     </footer>

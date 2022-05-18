@@ -1,0 +1,19 @@
+{% extends "index.html" %} {% block main %}
+<h2>Создать курс</h2>
+<form method="POST">
+  {% csrf_token %}
+  <p>
+    <label>Пользователь</label><br />
+    <input disabled type="text" name="user" value="{{anketa.user.full_name}}" />
+  </p>
+  <p>
+    <label>Адрес</label><br />
+    <input type="text" name="address" value="{{anketa.address}}" />
+  </p>
+  <p>
+    <label>Дата рождения</label><br />
+    <input type="text" name="birthday" value="{{anketa.birthday}}" />
+  </p>
+  <input type="submit" value="Сохранить" />
+</form>
+{% endblock %}
